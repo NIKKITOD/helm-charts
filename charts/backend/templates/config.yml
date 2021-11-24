@@ -8,13 +8,14 @@ metadata:
 data:
   SOME_DATA: {{ .Values.config.some_data }}
 
+{{ if .Values.config.include_nginx }}
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ include "backend.fullname" . }}-nginx-config
   labels:
-{{ include "backend.labels" . | indent 4 }} 
+{{- include "backend.labels" . | indent 4 }} 
 data:
   nginx.conf: |
     events {
@@ -68,3 +69,4 @@ data:
         location ~ \.php$ { return 404; }
       }
     }
+{{- end }}

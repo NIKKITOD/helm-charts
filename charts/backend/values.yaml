@@ -18,6 +18,7 @@ volume:
   storageClass: ""
 
 config:
+  include_nginx: False
   some_data: "Some Data"
 
 secret:
