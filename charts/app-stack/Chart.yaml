@@ -1,5 +1,5 @@
 apiVersion: v2
-version: 0.1.9
+version: 0.1.10
 appVersion: "0.1.2"
 
 name: app-stack
@@ -16,9 +16,9 @@ maintainers:
 dependencies:
 - name: "backend"
   condition: backend.enabled
-  version: "0.1.7"
+  version: ">=0.1.7"
   repository: "https://nikkitod.github.io/helm-charts/"
 - name: "frontend"
   condition: frontend.enabled
-  version: "0.1.7"
+  version: ">=0.1.7"
   repository: "https://nikkitod.github.io/helm-charts/"
