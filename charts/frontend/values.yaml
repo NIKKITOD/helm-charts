@@ -1,0 +1,18 @@
+nameOverride: ""
+fullnameOverride: ""
+
+common:
+  component: "frontend"
+
+image:
+  registry: docker.io
+  repository: nikitod/test-react-for-helm
+  tag: latest
+  pullPolicy: IfNotPresent
+  debug: false
+
+config:
+  some_data: "Some Data"
+
+secret:
+  some_secret: "Some Secret"

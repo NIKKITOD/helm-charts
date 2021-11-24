@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "frontend.fullname" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+{{ include "frontend.labels" . | indent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+{{ include "frontend.selectorLabels" . | indent 6 }}
+  template:
+    metadata:
+      labels:
+{{ include "frontend.selectorLabels" . | indent 8 }}
+    spec:
+      containers:
+      - name: {{ include "frontend.fullname" . }}
+        image: "{{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        ports:
+        - name: flask
+          containerPort: 5000

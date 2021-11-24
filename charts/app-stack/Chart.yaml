@@ -1,0 +1,9 @@
+apiVersion: v2
+version: 0.1.0
+appVersion: "0.1.0"
+name: app-stack
+description: "Include backend/frontend templates."
+home: https://github.com/NIKKITOD/helm-charts
+maintainers:
+- name: NIKKITOD
+  email: slepnevsns@gmail.com

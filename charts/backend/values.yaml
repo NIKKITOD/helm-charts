@@ -1,0 +1,24 @@
+nameOverride: ""
+fullnameOverride: ""
+
+common:
+  component: "backend"
+
+image:
+  registry: docker.io
+  repository: nikitod/test-flask-for-helm
+  tag: prod
+  pullPolicy: IfNotPresent
+  debug: false
+
+volume:
+  persistStorage:
+    static:
+      size: "1Gi"
+  storageClass: ""
+
+config:
+  some_data: "Some Data"
+
+secret:
+  some_secret: "Some Secret"

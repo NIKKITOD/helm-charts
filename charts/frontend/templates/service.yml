@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  {{ include "frontend.fullname" . }}-service
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+{{ include "frontend.labels" . | indent 4 }}    
+spec:
+  selector:
+{{ include "frontend.selectorLabels" . | indent 4 }}
+  type:  NodePort
+  ports:
+    - name:  react
+      port:  3000
+      targetPort:  3000
