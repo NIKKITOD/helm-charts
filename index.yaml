@@ -3,6 +3,21 @@ entries:
   app-stack:
   - apiVersion: v2
     appVersion: 0.1.2
+    created: "2021-11-24T14:08:03.129155364Z"
+    description: Simple stack chart template.
+    digest: 17def726f50c4ea80e49911f96deb06c74ba49aef0116bc94cdfd0d0976116af
+    home: https://github.com/NIKKITOD/helm-charts
+    maintainers:
+    - email: slepnevsns@gmail.com
+      name: NIKKITOD
+    name: app-stack
+    sources:
+    - https://github.com/NIKKITOD/helm-charts
+    urls:
+    - https://github.com/NIKKITOD/helm-charts/releases/download/app-stack-0.1.3/app-stack-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.1.2
     created: "2021-11-24T12:56:10.285861346Z"
     description: Simple stack chart template.
     digest: 0c2dd90432b4ffa35c4f342d7b81e482f5376e7e5b1a8fbab25c29af8cc86b9b
@@ -48,4 +63,4 @@ entries:
     urls:
     - https://github.com/NIKKITOD/helm-charts/releases/download/frontend-0.1.2/frontend-0.1.2.tgz
     version: 0.1.2
-generated: "2021-11-24T12:56:10.659827316Z"
+generated: "2021-11-24T14:08:03.12941296Z"
