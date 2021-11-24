@@ -16,9 +16,9 @@ maintainers:
 dependencies:
 - name: "backend"
   condition: backend.enabled
-  version: "~0.1.2"
+  version: "~0.1.2-0"
   repository: "https://nikkitod.github.io/helm-charts/"
 - name: "frontend"
   condition: frontend.enabled
-  version: "~0.1.2"
+  version: "~0.1.2-0"
   repository: "https://nikkitod.github.io/helm-charts/"
