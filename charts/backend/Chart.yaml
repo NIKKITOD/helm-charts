@@ -7,7 +7,7 @@ name: backend
 description: "Simple backend app template."
 home: https://github.com/NIKKITOD
 sources:
-- https://4xxi.com
+- https://github.com/NIKKITOD/helm-charts
 
 maintainers:
 - name: Nikita Slepnev

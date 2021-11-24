@@ -1,8 +1,14 @@
 apiVersion: v2
 version: 0.1.0
 appVersion: "0.1.0"
+
 name: app-stack
-description: "Include backend/frontend templates."
+description: "Simple stack chart template."
+home: https://github.com/NIKKITOD
+sources:
+- https://github.com/NIKKITOD/helm-charts
+
+
 home: https://github.com/NIKKITOD/helm-charts
 maintainers:
 - name: NIKKITOD
