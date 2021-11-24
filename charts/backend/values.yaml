@@ -12,6 +12,7 @@ image:
   debug: false
 
 volume:
+  include_nginx: False
   persistStorage:
     static:
       size: "1Gi"

@@ -11,3 +11,18 @@ spec:
     requests:
       storage: {{ default "1Gi" .Values.volume.persistStorage.static.size }}
   storageClassName: {{ default "hostpath" .Values.volume.storageClass }}
+  {{- if .Values.volume.include_nginx }}
+  apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "backend.fullname" . }}-nginx-volume
+  labels:
+{{ include "backend.labels" . | indent 4 }}
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ default "1Gi" .Values.volume.persistStorage.static.size }}
+  storageClassName: {{ default "hostpath" .Values.volume.storageClass }}
+  {{- end }}
