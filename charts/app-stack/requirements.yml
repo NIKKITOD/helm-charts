@@ -1,7 +1,0 @@
-dependencies:
-- name: "backend"
-  condition: backend.enabled
-  repository: "https://github.com/NIKKITOD/helm-charts"
-- name: "frontend"
-  condition: frontend.enabled
-  repository: "https://github.com/NIKKITOD/helm-charts"
