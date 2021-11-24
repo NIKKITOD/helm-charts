@@ -3,6 +3,30 @@ entries:
   app-stack:
   - apiVersion: v2
     appVersion: 0.1.2
+    created: "2021-11-24T14:36:55.39715953Z"
+    dependencies:
+    - condition: backend.enabled
+      name: backend
+      repository: https://nikkitod.github.io/helm-charts/
+      version: ^0.1.0
+    - condition: frontend.enabled
+      name: frontend
+      repository: https://nikkitod.github.io/helm-charts/
+      version: ^0.1.0
+    description: Simple stack chart template.
+    digest: 1a6faa7a5fe42a5057fa8f3a8186ce200d2e95f2ad1534f87df4cdc508489645
+    home: https://github.com/NIKKITOD/helm-charts
+    maintainers:
+    - email: slepnevsns@gmail.com
+      name: NIKKITOD
+    name: app-stack
+    sources:
+    - https://github.com/NIKKITOD/helm-charts
+    urls:
+    - https://github.com/NIKKITOD/helm-charts/releases/download/app-stack-0.1.5/app-stack-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 0.1.2
     created: "2021-11-24T14:08:03.129155364Z"
     description: Simple stack chart template.
     digest: 17def726f50c4ea80e49911f96deb06c74ba49aef0116bc94cdfd0d0976116af
@@ -63,4 +87,4 @@ entries:
     urls:
     - https://github.com/NIKKITOD/helm-charts/releases/download/frontend-0.1.2/frontend-0.1.2.tgz
     version: 0.1.2
-generated: "2021-11-24T14:08:03.12941296Z"
+generated: "2021-11-24T14:36:55.397190333Z"
