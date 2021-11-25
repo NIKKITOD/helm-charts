@@ -10,9 +10,9 @@ spec:
 {{ include "backend.selectorLabels" . | indent 4 }}
   type:  NodePort
   ports:
-    - name:  flask
-      port:  5000
-      targetPort:  5000
+    - name:  http
+      port:  {{ default 5000 .Values.common.port}}
+      targetPort:  {{ default 500 .Values.common.containerPort }}
     # - name:  php-fpm
     #   port:  9000
     #   targetPort:  9000

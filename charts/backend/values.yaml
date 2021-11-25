@@ -1,14 +1,16 @@
-nameOverride: ""
-fullnameOverride: ""
+nameOverride:
+fullnameOverride:
 
 common:
+  port:
+  containerPort: 
   component: "backend"
   include_nginx: False
 
 image:
   registry: docker.io
-  repository: nikitod/test-flask-for-helm
-  tag: prod
+  repository:
+  tag: latest
   pullPolicy: IfNotPresent
   debug: false
 
@@ -18,8 +20,8 @@ config:
 volume:
   persistStorage:
     static:
-      size: ""
-  storageClass: ""
+      size:
+  storageClass:
 
 secret:
   some_secret: "Some Secret"
