@@ -2,6 +2,29 @@ apiVersion: v1
 entries:
   app-stack:
   - apiVersion: v2
+    created: "2021-11-25T22:42:26.405290827Z"
+    dependencies:
+    - condition: backend.enabled
+      name: backend
+      repository: https://nikkitod.github.io/helm-charts/
+      version: ^0.1.7
+    - condition: frontend.enabled
+      name: frontend
+      repository: https://nikkitod.github.io/helm-charts/
+      version: ^0.1.7
+    description: Simple stack chart template.
+    digest: 4950d4e88c8a38976a730534cb587f19fc340c3a148408ed81aa5252540497ae
+    home: https://github.com/NIKKITOD/helm-charts
+    maintainers:
+    - email: slepnevsns@gmail.com
+      name: NIKKITOD
+    name: app-stack
+    sources:
+    - https://github.com/NIKKITOD/helm-charts
+    urls:
+    - https://github.com/NIKKITOD/helm-charts/releases/download/app-stack-0.1.13/app-stack-0.1.13.tgz
+    version: 0.1.13
+  - apiVersion: v2
     appVersion: 0.1.2
     created: "2021-11-25T16:16:14.618245953Z"
     dependencies:
@@ -201,6 +224,20 @@ entries:
     version: 0.1.2
   backend:
   - apiVersion: v2
+    created: "2021-11-25T22:42:26.569854899Z"
+    description: Simple backend app template.
+    digest: fd43ec1ce6dd6f4d4ca6c79158ac0fbd627de464c9798ec7ffb91031772ed2ad
+    home: https://github.com/NIKKITOD
+    maintainers:
+    - email: slepnevns@gmail.com
+      name: Nikita Slepnev
+    name: backend
+    sources:
+    - https://github.com/NIKKITOD/helm-charts
+    urls:
+    - https://github.com/NIKKITOD/helm-charts/releases/download/backend-0.1.13/backend-0.1.13.tgz
+    version: 0.1.13
+  - apiVersion: v2
     appVersion: 1.1.4
     created: "2021-11-25T15:45:02.167731699Z"
     description: Simple backend app template.
@@ -292,6 +329,20 @@ entries:
     version: 0.1.2
   frontend:
   - apiVersion: v2
+    created: "2021-11-25T22:42:26.747269486Z"
+    description: Simple frontend app template.
+    digest: e8fb0635777c9be60f7453af3106069a5b77377184ffbec8668bb0fd05b9c1c3
+    home: https://github.com/NIKKITOD
+    maintainers:
+    - email: slepnevns@gmail.com
+      name: Nikita Slepnev
+    name: frontend
+    sources:
+    - https://github.com/NIKKITOD/helm-charts
+    urls:
+    - https://github.com/NIKKITOD/helm-charts/releases/download/frontend-0.1.9/frontend-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
     appVersion: 1.1.2
     created: "2021-11-25T14:53:49.825164347Z"
     description: Simple frontend app template.
@@ -336,4 +387,4 @@ entries:
     urls:
     - https://github.com/NIKKITOD/helm-charts/releases/download/frontend-0.1.2/frontend-0.1.2.tgz
     version: 0.1.2
-generated: "2021-11-25T16:16:14.618299753Z"
+generated: "2021-11-25T22:42:26.747414487Z"
