@@ -154,6 +154,21 @@ entries:
   backend:
   - apiVersion: v2
     appVersion: 1.1.4
+    created: "2021-11-25T14:53:49.688733648Z"
+    description: Simple backend app template.
+    digest: bc2c90c15e0312ce0542dd9b50e32de8caeccf1dc8708876013001be2a6885a3
+    home: https://github.com/NIKKITOD
+    maintainers:
+    - email: slepnevns@gmail.com
+      name: Nikita Slepnev
+    name: backend
+    sources:
+    - https://github.com/NIKKITOD/helm-charts
+    urls:
+    - https://github.com/NIKKITOD/helm-charts/releases/download/backend-0.1.9/backend-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
+    appVersion: 1.1.4
     created: "2021-11-24T22:47:24.055935732Z"
     description: Simple backend app template.
     digest: 614eb326435669028945ff43afae20445da61f257d58df777574775c14a75a22
@@ -200,6 +215,21 @@ entries:
   frontend:
   - apiVersion: v2
     appVersion: 1.1.2
+    created: "2021-11-25T14:53:49.825164347Z"
+    description: Simple frontend app template.
+    digest: e0b9d9ada44e7ba352761986fd105423c874bc793f47fdbdadf37fc42b44f119
+    home: https://github.com/NIKKITOD
+    maintainers:
+    - email: slepnevns@gmail.com
+      name: Nikita Slepnev
+    name: frontend
+    sources:
+    - https://github.com/NIKKITOD/helm-charts
+    urls:
+    - https://github.com/NIKKITOD/helm-charts/releases/download/frontend-0.1.8/frontend-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: 1.1.2
     created: "2021-11-24T22:29:23.789202254Z"
     description: Simple frontend app template.
     digest: a2169867cd3587e6a91a3cb0feb1f145e0ee1e1cb900c159f4f41ba67ba39fc8
@@ -228,4 +258,4 @@ entries:
     urls:
     - https://github.com/NIKKITOD/helm-charts/releases/download/frontend-0.1.2/frontend-0.1.2.tgz
     version: 0.1.2
-generated: "2021-11-24T22:47:24.055967832Z"
+generated: "2021-11-25T14:53:49.825198248Z"
