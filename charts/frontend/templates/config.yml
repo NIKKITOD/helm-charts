@@ -1,3 +1,4 @@
+{{- if .Values.config }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -6,4 +7,7 @@ metadata:
   labels:
 {{ include "frontend.labels" . | indent 4 }}    
 data:
-  SOME_DATA: {{ .Values.config.some_data }}
+{{- range .Values.config }}
+  {{ .name | quote }}: {{ .value | b64enc }} 
+{{- end }}
+{{- end }}

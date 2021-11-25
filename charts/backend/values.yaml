@@ -2,10 +2,11 @@ nameOverride:
 fullnameOverride:
 
 common:
-  port:
-  containerPort: 
-  component: "backend"
   include_nginx: False
+  ports:
+    - name: http
+      port: 5000
+  component: "backend"
 
 image:
   registry: docker.io
@@ -14,14 +15,17 @@ image:
   pullPolicy: IfNotPresent
   debug: false
 
-config:
-  some_data: "Some Data"
-
 volume:
+  enabled: false
   persistStorage:
     static:
       size:
   storageClass:
 
-secret:
-  some_secret: "Some Secret"
+config:
+  - name:
+    value:
+
+secrets:
+  - name:
+    value:

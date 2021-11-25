@@ -19,5 +19,7 @@ spec:
       - name: {{ include "frontend.fullname" . }}
         image: "{{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
-        - name: http
-          containerPort: {{ default 3000 .Values.common.containerPort }}
+        {{- range .Values.common.ports }}
+        - name: {{ default "http" .name}}
+          containerPort: {{ default 80 .port }}
+        {{- end }}

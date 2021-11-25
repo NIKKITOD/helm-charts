@@ -10,6 +10,8 @@ spec:
 {{ include "frontend.selectorLabels" . | indent 4 }}
   type:  NodePort
   ports:
-    - name:  http
-      port:  {{ default 3000 .Values.common.port }}
-      targetPort:  {{ default 3000 .Values.common.containerPort }}
+    {{- range .Values.common.ports }}
+    - name:  {{ default "http" .name }}
+      port:  {{ default 80 .port}}
+      targetPort:  {{ default 80 .port }}
+    {{- end }}

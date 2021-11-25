@@ -1,12 +1,16 @@
+{{- if .Values.config }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name:  {{ include "backend.fullname" . }}-config
   namespace: {{ .Release.Namespace | quote }}
   labels:
-{{ include "backend.labels" . | indent 4 }}    
+{{ include "backend.labels" . | indent 4 }}
+{{- range .Values.config }}   
 data:
-  SOME_DATA: {{ .Values.config.some_data }}
+  {{ .name }}: {{ .value }}
+{{- end }}
+{{- end }}
 
 {{- if .Values.common.include_nginx }}
 ---

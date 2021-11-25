@@ -2,8 +2,9 @@ nameOverride: ""
 fullnameOverride: ""
 
 common:
-  port: ""
-  containerPort: ""
+  ports:
+    - name: http
+      port: 3000
   component: "frontend"
 
 image:
@@ -14,7 +15,8 @@ image:
   debug: false
 
 config:
-  some_data: "Some Data"
-
-secret:
-  some_secret: "Some Secret"
+  - name: EXAMPLE_ENV
+    value: "example.string:123"
+secrets:
+  - name: EXAMPLE_ENV
+    value: "example.string:123"

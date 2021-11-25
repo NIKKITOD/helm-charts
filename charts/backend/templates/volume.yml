@@ -1,3 +1,4 @@
+{{- if .Values.volume.enabled }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -11,6 +12,7 @@ spec:
     requests:
       storage: {{ default "1Gi" .Values.volume.persistStorage.static.size }}
   storageClassName: {{ default "hostpath" .Values.volume.storageClass }}
+{{- end }}
 
 {{- if .Values.common.include_nginx }}
 ---
