@@ -19,5 +19,5 @@ spec:
       - name: {{ include "frontend.fullname" . }}
         image: "{{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
-        - name: flask
-          containerPort: 5000
+        - name: http
+          containerPort: {{ default 3000 .Values.common.containerPort }}

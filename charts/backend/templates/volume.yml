@@ -11,8 +11,10 @@ spec:
     requests:
       storage: {{ default "1Gi" .Values.volume.persistStorage.static.size }}
   storageClassName: {{ default "hostpath" .Values.volume.storageClass }}
-  {{- if .Values.volume.include_nginx }}
-  apiVersion: v1
+
+{{- if .Values.common.include_nginx }}
+---
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: {{ include "backend.fullname" . }}-nginx-volume
@@ -25,4 +27,4 @@ spec:
     requests:
       storage: {{ default "1Gi" .Values.volume.persistStorage.static.size }}
   storageClassName: {{ default "hostpath" .Values.volume.storageClass }}
-  {{- end }}
+{{- end }}

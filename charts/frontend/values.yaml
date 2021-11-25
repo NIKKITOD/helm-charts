@@ -2,6 +2,8 @@ nameOverride: ""
 fullnameOverride: ""
 
 common:
+  port: ""
+  containerPort: ""
   component: "frontend"
 
 image:

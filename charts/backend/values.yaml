@@ -3,6 +3,7 @@ fullnameOverride: ""
 
 common:
   component: "backend"
+  include_nginx: False
 
 image:
   registry: docker.io
@@ -11,16 +12,14 @@ image:
   pullPolicy: IfNotPresent
   debug: false
 
+config:
+  some_data: "Some Data"
+
 volume:
-  include_nginx: False
   persistStorage:
     static:
-      size: "1Gi"
+      size: ""
   storageClass: ""
-
-config:
-  include_nginx: False
-  some_data: "Some Data"
 
 secret:
   some_secret: "Some Secret"
