@@ -3,8 +3,6 @@ fullnameOverride: ""
 
 common:
   ports:
-    - name: http
-      port: 3000
   component: "frontend"
 
 image:
@@ -15,8 +13,5 @@ image:
   debug: false
 
 config:
-  - name: EXAMPLE_ENV
-    value: "example.string:123"
+
 secrets:
-  - name: EXAMPLE_ENV
-    value: "example.string:123"

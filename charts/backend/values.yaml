@@ -4,8 +4,6 @@ fullnameOverride:
 common:
   include_nginx: False
   ports:
-    - name: http
-      port: 5000
   component: "backend"
 
 image:
@@ -23,9 +21,5 @@ volume:
   storageClass:
 
 config:
-  - name:
-    value:
 
 secrets:
-  - name:
-    value:
