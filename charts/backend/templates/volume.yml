@@ -1,20 +1,23 @@
-{{- if .Values.volume.enabled }}
+{{- if .Values.volumes }}
+{{- range .Values.volumes }}
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "backend.fullname" . }}-static-files
+  name: {{ include "backend.fullname" $ }}-{{ .name }}-volume
   labels:
-{{ include "backend.labels" . | indent 4 }}
+{{ include "backend.labels" $ | indent 4 }}
 spec:
   accessModes:
   - ReadWriteOnce
   resources:
     requests:
-      storage: {{ default "1Gi" .Values.volume.persistStorage.static.size }}
-  storageClassName: {{ default "hostpath" .Values.volume.storageClass }}
+      storage: {{ default "1Gi" .size }}
+  storageClassName: {{ default "hostpath" .storageClass }}
+{{- end }}
 {{- end }}
 
-{{- if .Values.common.include_nginx }}
+{{- if .Values.nginx.enabled }}
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -27,6 +30,6 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
-      storage: {{ default "1Gi" .Values.volume.persistStorage.static.size }}
-  storageClassName: {{ default "hostpath" .Values.volume.storageClass }}
+      storage: {{ default "1Gi" }}
+  storageClassName: "hostpath"
 {{- end }}

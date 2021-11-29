@@ -1,3 +1,4 @@
+{{- if .Values.ports }}
 kind: Service
 apiVersion: v1
 metadata:
@@ -10,8 +11,9 @@ spec:
 {{ include "backend.selectorLabels" . | indent 4 }}
   type:  NodePort
   ports:
-    {{- range .Values.common.ports }}
+    {{- range .Values.ports }}
     - name: {{ default "http" .name }}
-      port: {{ default 80 .port}}
+      port: {{ default 80 .port }}
       targetPort: {{ default 80 .port }}
     {{- end }}
+{{- end }}

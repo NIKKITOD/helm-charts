@@ -2,24 +2,38 @@ nameOverride:
 fullnameOverride:
 
 common:
-  include_nginx: False
-  ports:
   component: "backend"
 
 image:
   registry: docker.io
-  repository:
+  repository: nikitod/test-flask-for-helm
   tag: latest
   pullPolicy: IfNotPresent
   debug: false
 
-volume:
-  enabled: false
-  persistStorage:
-    static:
-      size:
-  storageClass:
+nginx:
+  enabled: true
+  storageClass: ""
 
-config:
+# Default - http 80
+# ports:
+#   - name:
+#     port:
 
-secrets:
+# Optional values
+
+# volumes:
+#   - name:
+#     size:
+#     storageClass:
+#     mountPath:
+#     initMountPath:
+#     command:
+
+# config:
+#   - name:
+#     value:
+
+# secrets:
+#   - name:
+#     value:

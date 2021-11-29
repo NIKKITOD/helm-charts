@@ -19,7 +19,48 @@ spec:
       - name: {{ include "backend.fullname" . }}
         image: "{{ default .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
-        {{- range .Values.common.ports }}
-        - name: {{ default "http" .name}}
+        {{- if .Values.ports }}
+        {{- range .Values.ports }}
+        - name: {{ default "http" .name }}
           containerPort: {{ default 80 .port }}
+        {{- end }}
+        {{- end }}
+        volumeMounts:
+          {{- if .Values.volumes }}   
+          {{- range .Values.volumes }}
+          - mountPath: {{ .mountPath }}
+            name: {{ include "backend.fullname" $ }}-{{ .name }}-volume
+          {{- end }}
+          {{- end }}
+          {{- if .Values.nginx.enabled }}
+          - mountPath: /etc/nginx/nginx.conf
+            name: {{ include "backend.fullname" . }}-nginx-config-volume
+            subPath: nginx.conf
+          {{- end }}
+      initContainers:
+        {{- if .Values.volumes }}
+        {{- range .Values.volumes }}
+        - name: {{ .name }}
+          image: "{{ $.Values.image.registry}}/{{ $.Values.image.repository}}:{{ $.Values.image.tag }}"
+          imagePullPolicy: {{ default "" $.Values.image.pullPolicy | quote }}
+          command: {{ .command }}
+          volumeMounts:
+            - mountPath: {{ .initMountPath }}
+              name: {{ include "backend.fullname" $ }}-{{ .name }}-volume
+        {{- end }}
+        {{- end }}
+      volumes:
+        {{- if .Values.volumes }}
+        {{- range .Values.volumes }}
+        - name: {{ include "backend.fullname" $ }}-{{ .name }}-volume
+          persistentVolumeClaim:
+            claimName: {{ include "backend.fullname" $ }}-{{ .name }}-volume
+        {{- end }}
+        {{- end }}
+        {{- if .Values.nginx.enabled }}
+        - configMap:
+            defaultMode: 256
+            name: {{ include "backend.fullname" . }}-nginx-config
+            optional: false
+          name: {{ include "backend.fullname" . }}-nginx-config-volume
         {{- end }}
